@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace kursach2
 {
@@ -16,49 +16,64 @@ namespace kursach2
         public Form1()
         {
             InitializeComponent();
-
-            LoadData();
         }
 
-        private void LoadData()
+        private void auth_load()
         {
-            string connectString = "Data Source=.\\silan.zyns.com:3306;" +
-                "Initial Catalog=cyvarev; " +
-                "Integrated Security=true;";
-
-            SqlConnection myConnection = new SqlConnection(connectString);
-
-            myConnection.Open();
-
-            string query = "SELECT * FROM Client";
-
-            SqlCommand command = new SqlCommand(query, myConnection);
-
-            SqlDataReader reader = command.ExecuteReader();
-
-            List<string[]> data = new List<string[]>();
-
-            while (reader.Read())
+            DataTable dt = new DataTable();
+            MySqlConnectionStringBuilder mysqlCSB;
+            mysqlCSB = new MySqlConnectionStringBuilder();
+            mysqlCSB.Server = "silan.zyns.com";
+            mysqlCSB.Port = 3306;
+            mysqlCSB.Database = "cyvarev";
+            mysqlCSB.UserID = "cyvarev";
+            mysqlCSB.Password = "cyvarev";
+            string queryString = @"SELECT * FROM Client";
+            using (MySqlConnection con = new MySqlConnection())
             {
-                data.Add(new string[3]);
-
-                data[data.Count - 1][0] = reader[0].ToString();
-                data[data.Count - 1][0] = reader[1].ToString();
-                data[data.Count - 1][0] = reader[2].ToString();
+                con.ConnectionString = mysqlCSB.ConnectionString;
+                MySqlCommand com = new MySqlCommand(queryString, con);
+                try
+                {
+                    con.Open();
+                    using (MySqlDataReader dr = com.ExecuteReader())
+                    {
+                        if (dr.HasRows)
+                        {
+                            dt.Load(dr);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-
-            reader.Close();
-            myConnection.Close();
-
-            foreach (string[] s in data)
-                dataGridView1.Rows.Add(s);
+            dataGridView1.DataSource = dt;
         }
 
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-
+            auth_load();
         }
 
-        
+        private int user_type;
+
+        private bool user_check()
+        {
+            bool b = false;
+            for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+            {
+                if ((textBox1.Text == dataGridView1.Rows[i].Cells[0].Value.ToString()) && (textBox2.Text == dataGridView1.Rows[i].Cells[1].Value.ToString()))
+                {
+                    b = true;
+                    user_type = Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value.ToString());
+                }
+            }
+            return b;
+        }
+
+
+
     }
 }

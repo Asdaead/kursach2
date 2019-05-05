@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id_client = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.birth = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.polis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cyvarevDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cyvarevDataSet = new kursach2.cyvarevDataSet();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,46 +42,15 @@
             this.change_client = new System.Windows.Forms.Button();
             this.add_client = new System.Windows.Forms.Button();
             this.delete_client = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id_client = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.birth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.polis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.cyvarevDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cyvarevDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_client,
-            this.name,
-            this.birth,
-            this.polis});
-            this.dataGridView1.DataSource = this.cyvarevDataSetBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(1, -1);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(432, 452);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
-            // 
-            // id_client
-            // 
-            this.id_client.HeaderText = "id_client";
-            this.id_client.Name = "id_client";
-            // 
-            // name
-            // 
-            this.name.HeaderText = "name";
-            this.name.Name = "name";
-            // 
-            // birth
-            // 
-            this.birth.HeaderText = "birth";
-            this.birth.Name = "birth";
-            // 
-            // polis
-            // 
-            this.polis.HeaderText = "polis";
-            this.polis.Name = "polis";
             // 
             // cyvarevDataSetBindingSource
             // 
@@ -189,11 +153,45 @@
             this.delete_client.Text = "Delete";
             this.delete_client.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_client,
+            this.name,
+            this.birth,
+            this.polis});
+            this.dataGridView1.Location = new System.Drawing.Point(2, -1);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(443, 449);
+            this.dataGridView1.TabIndex = 12;
+            // 
+            // id_client
+            // 
+            this.id_client.HeaderText = "id_client";
+            this.id_client.Name = "id_client";
+            // 
+            // name
+            // 
+            this.name.HeaderText = "name";
+            this.name.Name = "name";
+            // 
+            // birth
+            // 
+            this.birth.HeaderText = "birth";
+            this.birth.Name = "birth";
+            // 
+            // polis
+            // 
+            this.polis.HeaderText = "polis";
+            this.polis.Name = "polis";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 448);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.delete_client);
             this.Controls.Add(this.add_client);
             this.Controls.Add(this.change_client);
@@ -205,20 +203,17 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cyvarevDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cyvarevDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
@@ -226,16 +221,17 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.BindingSource cyvarevDataSetBindingSource;
         private cyvarevDataSet cyvarevDataSet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_client;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn birth;
-        private System.Windows.Forms.DataGridViewTextBoxColumn polis;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button change_client;
         private System.Windows.Forms.Button add_client;
         private System.Windows.Forms.Button delete_client;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_client;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn birth;
+        private System.Windows.Forms.DataGridViewTextBoxColumn polis;
     }
 }
 
