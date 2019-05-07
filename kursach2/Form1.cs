@@ -16,19 +16,24 @@ namespace kursach2
         public Form1()
         {
             InitializeComponent();
+            dataGridView1.DataSource = load_data();
         }
 
-        private void auth_load()
+        private DataTable load_data()
         {
             DataTable dt = new DataTable();
             MySqlConnectionStringBuilder mysqlCSB;
             mysqlCSB = new MySqlConnectionStringBuilder();
             mysqlCSB.Server = "silan.zyns.com";
-            mysqlCSB.Port = 3306;
+            //адрес сервера
             mysqlCSB.Database = "cyvarev";
+            //наименование базы данных
             mysqlCSB.UserID = "cyvarev";
+            //имя пользователя
             mysqlCSB.Password = "cyvarev";
+            //пароль
             string queryString = @"SELECT * FROM Client";
+            //SQL-запрос
             using (MySqlConnection con = new MySqlConnection())
             {
                 con.ConnectionString = mysqlCSB.ConnectionString;
@@ -49,31 +54,9 @@ namespace kursach2
                     MessageBox.Show(ex.Message);
                 }
             }
-            dataGridView1.DataSource = dt;
+            return dt;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            auth_load();
-        }
-
-        private int user_type;
-
-        private bool user_check()
-        {
-            bool b = false;
-            for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-            {
-                if ((textBox1.Text == dataGridView1.Rows[i].Cells[0].Value.ToString()) && (textBox2.Text == dataGridView1.Rows[i].Cells[1].Value.ToString()))
-                {
-                    b = true;
-                    user_type = Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value.ToString());
-                }
-            }
-            return b;
-        }
-
-
-
+       
     }
 }
