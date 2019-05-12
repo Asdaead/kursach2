@@ -1,4 +1,7 @@
-﻿namespace kursach2
+﻿using System;
+using System.Windows.Forms;
+
+namespace kursach2
 {
     partial class Form1
     {
@@ -43,10 +46,6 @@
             this.add_client = new System.Windows.Forms.Button();
             this.delete_client = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id_client = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.birth = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.polis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.cyvarevDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cyvarevDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -156,35 +155,11 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_client,
-            this.name,
-            this.birth,
-            this.polis});
             this.dataGridView1.Location = new System.Drawing.Point(2, -1);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(443, 449);
+            this.dataGridView1.Size = new System.Drawing.Size(435, 449);
             this.dataGridView1.TabIndex = 12;
-            // 
-            // id_client
-            // 
-            this.id_client.HeaderText = "id_client";
-            this.id_client.Name = "id_client";
-            // 
-            // name
-            // 
-            this.name.HeaderText = "name";
-            this.name.Name = "name";
-            // 
-            // birth
-            // 
-            this.birth.HeaderText = "birth";
-            this.birth.Name = "birth";
-            // 
-            // polis
-            // 
-            this.polis.HeaderText = "polis";
-            this.polis.Name = "polis";
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Form1
             // 
@@ -213,6 +188,11 @@
 
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -228,10 +208,6 @@
         private System.Windows.Forms.Button add_client;
         private System.Windows.Forms.Button delete_client;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_client;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn birth;
-        private System.Windows.Forms.DataGridViewTextBoxColumn polis;
     }
 }
 

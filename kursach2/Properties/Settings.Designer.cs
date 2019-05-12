@@ -32,5 +32,15 @@ namespace kursach2.Properties {
                 return ((string)(this["cyvarevConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=silan.zyns.com;user id=cyvarev;database=cyvarev;persistsecurityinfo=True")]
+        public string silanzyns {
+            get {
+                return ((string)(this["silanzyns"]));
+            }
+        }
     }
 }

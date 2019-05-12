@@ -13,50 +13,89 @@ namespace kursach2
 {
     public partial class Form1 : Form
     {
+
+        private string server;
+        private string database;
+        private string uid;
+        private string password;
+        private MySqlConnection connection;
+        private MySqlDataAdapter mySqlDataAdapter;
+
+
         public Form1()
         {
             InitializeComponent();
-            dataGridView1.DataSource = load_data();
+            load_data();
         }
 
-        private DataTable load_data()
+        private void load_data()
         {
-            DataTable dt = new DataTable();
-            MySqlConnectionStringBuilder mysqlCSB;
-            mysqlCSB = new MySqlConnectionStringBuilder();
-            mysqlCSB.Server = "silan.zyns.com";
-            //адрес сервера
-            mysqlCSB.Database = "cyvarev";
-            //наименование базы данных
-            mysqlCSB.UserID = "cyvarev";
-            //имя пользователя
-            mysqlCSB.Password = "cyvarev";
-            //пароль
-            string queryString = @"SELECT * FROM Client";
-            //SQL-запрос
-            using (MySqlConnection con = new MySqlConnection())
+            server = "silan.zyns.com";
+            database = "cyvarev";
+            uid = "cyvarev";
+            password = "cyvarev";
+            
+            string connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+
+            connection = new MySqlConnection(connectionString);
+         
+
+            if (this.OpenConnection() == true)
             {
-                con.ConnectionString = mysqlCSB.ConnectionString;
-                MySqlCommand com = new MySqlCommand(queryString, con);
-                try
-                {
-                    con.Open();
-                    using (MySqlDataReader dr = com.ExecuteReader())
-                    {
-                        if (dr.HasRows)
-                        {
-                            dt.Load(dr);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                mySqlDataAdapter = new MySqlDataAdapter("select * from Client", connection);
+                DataSet DS = new DataSet();
+                mySqlDataAdapter.Fill(DS);
+                dataGridView1.DataSource = DS.Tables[0];
+
+                
+                this.CloseConnection();
             }
-            return dt;
+
         }
 
-       
+        private bool OpenConnection()
+        {
+            try
+            {
+                connection.Open();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+               
+                switch (ex.Number)
+                {
+                    case 0:
+                        MessageBox.Show("Cannot connect to server. Contact administrator");
+                        break;
+                    case 1045:
+                        MessageBox.Show("Invalid username/password, please try again");
+                        break;
+                    default:
+                        MessageBox.Show(ex.Message);
+                        break;
+                }
+                return false;
+            }
+        }
+
+        private bool CloseConnection()
+        {
+            try
+            {
+                connection.Close();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
