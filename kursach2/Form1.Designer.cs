@@ -46,6 +46,9 @@ namespace kursach2
             this.add_client = new System.Windows.Forms.Button();
             this.delete_client = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cyvarevDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cyvarevDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -127,30 +130,33 @@ namespace kursach2
             // 
             // change_client
             // 
-            this.change_client.Location = new System.Drawing.Point(515, 288);
+            this.change_client.Location = new System.Drawing.Point(632, 288);
             this.change_client.Name = "change_client";
             this.change_client.Size = new System.Drawing.Size(75, 23);
             this.change_client.TabIndex = 9;
             this.change_client.Text = "Change";
             this.change_client.UseVisualStyleBackColor = true;
+            this.change_client.Click += new System.EventHandler(this.change_client_Click);
             // 
             // add_client
             // 
-            this.add_client.Location = new System.Drawing.Point(596, 288);
+            this.add_client.Location = new System.Drawing.Point(551, 288);
             this.add_client.Name = "add_client";
             this.add_client.Size = new System.Drawing.Size(75, 23);
             this.add_client.TabIndex = 10;
             this.add_client.Text = "Add";
             this.add_client.UseVisualStyleBackColor = true;
+            this.add_client.Click += new System.EventHandler(this.add_client_Click);
             // 
             // delete_client
             // 
-            this.delete_client.Location = new System.Drawing.Point(677, 288);
+            this.delete_client.Location = new System.Drawing.Point(713, 288);
             this.delete_client.Name = "delete_client";
             this.delete_client.Size = new System.Drawing.Size(75, 23);
             this.delete_client.TabIndex = 11;
             this.delete_client.Text = "Delete";
             this.delete_client.UseVisualStyleBackColor = true;
+            this.delete_client.Click += new System.EventHandler(this.delete_client_Click);
             // 
             // dataGridView1
             // 
@@ -161,11 +167,47 @@ namespace kursach2
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(467, 356);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "label5";
+            this.label5.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(467, 379);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "label6";
+            this.label6.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(467, 402);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "label7";
+            this.label7.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 448);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.delete_client);
             this.Controls.Add(this.add_client);
@@ -208,6 +250,9 @@ namespace kursach2
         private System.Windows.Forms.Button add_client;
         private System.Windows.Forms.Button delete_client;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private Label label5;
+        private Label label6;
+        private Label label7;
     }
 }
 
