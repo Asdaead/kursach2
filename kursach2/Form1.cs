@@ -26,7 +26,7 @@ namespace kursach2
         {
             InitializeComponent();
 
-            load_data();
+            load_data(); 
         }
 
         private void load_data()
@@ -94,7 +94,7 @@ namespace kursach2
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                 id_box.Text = row.Cells[0].Value.ToString();
                 name_box.Text = row.Cells[1].Value.ToString();
-                birth_box.Text = row.Cells[2].Value.ToString();
+                datepick.Value = Convert.ToDateTime(row.Cells[2].Value.ToString());
                 polis_box.Text = row.Cells[3].Value.ToString();
             }
         }
@@ -106,7 +106,7 @@ namespace kursach2
                 label5.Visible = false;
 
             if (!string.IsNullOrEmpty(name_box.Text) && !string.IsNullOrWhiteSpace(name_box.Text) &&
-                !string.IsNullOrEmpty(birth_box.Text) && !string.IsNullOrWhiteSpace(birth_box.Text) &&
+                (datepick.Value)!=null && (datepick.Value) != null &&
                 !string.IsNullOrEmpty(polis_box.Text) && !string.IsNullOrWhiteSpace(polis_box.Text))
             {
 
@@ -143,7 +143,7 @@ namespace kursach2
 
             if (!string.IsNullOrEmpty(id_box.Text) && !string.IsNullOrWhiteSpace(id_box.Text) &&
                 !string.IsNullOrEmpty(name_box.Text) && !string.IsNullOrWhiteSpace(name_box.Text) &&
-                !string.IsNullOrEmpty(birth_box.Text) && !string.IsNullOrWhiteSpace(birth_box.Text) &&
+                datepick.Value != null && datepick.Value != null &&
                 !string.IsNullOrEmpty(polis_box.Text) && !string.IsNullOrWhiteSpace(polis_box.Text))
             {
                 MySqlCommand command = new MySqlCommand("UPDATE Client SET name=@name, birth=@birth, polis=@polis WHERE id_client=@id_client", connection);

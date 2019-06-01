@@ -39,7 +39,6 @@ namespace kursach2
             this.label3 = new System.Windows.Forms.Label();
             this.id_box = new System.Windows.Forms.TextBox();
             this.name_box = new System.Windows.Forms.TextBox();
-            this.birth_box = new System.Windows.Forms.TextBox();
             this.polis_box = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.change_client = new System.Windows.Forms.Button();
@@ -94,34 +93,27 @@ namespace kursach2
             // 
             this.id_box.Location = new System.Drawing.Point(659, 66);
             this.id_box.Name = "id_box";
-            this.id_box.Size = new System.Drawing.Size(100, 20);
+            this.id_box.Size = new System.Drawing.Size(129, 20);
             this.id_box.TabIndex = 4;
             // 
             // name_box
             // 
             this.name_box.Location = new System.Drawing.Point(659, 92);
             this.name_box.Name = "name_box";
-            this.name_box.Size = new System.Drawing.Size(100, 20);
+            this.name_box.Size = new System.Drawing.Size(129, 20);
             this.name_box.TabIndex = 5;
-            // 
-            // birth_box
-            // 
-            this.birth_box.Location = new System.Drawing.Point(659, 119);
-            this.birth_box.Name = "birth_box";
-            this.birth_box.Size = new System.Drawing.Size(100, 20);
-            this.birth_box.TabIndex = 6;
             // 
             // polis_box
             // 
-            this.polis_box.Location = new System.Drawing.Point(659, 145);
+            this.polis_box.Location = new System.Drawing.Point(659, 148);
             this.polis_box.Name = "polis_box";
-            this.polis_box.Size = new System.Drawing.Size(100, 20);
+            this.polis_box.Size = new System.Drawing.Size(129, 20);
             this.polis_box.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(544, 145);
+            this.label4.Location = new System.Drawing.Point(544, 151);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 8;
@@ -182,9 +174,9 @@ namespace kursach2
             // 
             // datepick
             // 
-            this.datepick.Location = new System.Drawing.Point(632, 184);
+            this.datepick.Location = new System.Drawing.Point(659, 122);
             this.datepick.Name = "datepick";
-            this.datepick.Size = new System.Drawing.Size(127, 20);
+            this.datepick.Size = new System.Drawing.Size(129, 20);
             this.datepick.TabIndex = 14;
             // 
             // Form1
@@ -200,7 +192,6 @@ namespace kursach2
             this.Controls.Add(this.change_client);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.polis_box);
-            this.Controls.Add(this.birth_box);
             this.Controls.Add(this.name_box);
             this.Controls.Add(this.id_box);
             this.Controls.Add(this.label3);
@@ -226,7 +217,6 @@ namespace kursach2
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox id_box;
         private System.Windows.Forms.TextBox name_box;
-        private System.Windows.Forms.TextBox birth_box;
         private System.Windows.Forms.BindingSource cyvarevDataSetBindingSource;
         private cyvarevDataSet cyvarevDataSet;
         private System.Windows.Forms.Label label1;
