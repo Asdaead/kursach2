@@ -101,27 +101,16 @@ namespace kursach2
 
         private void add_client_Click(object sender, EventArgs e)
         {
-            this.OpenConnection();
+            
             if (label5.Visible)
                 label5.Visible = false;
 
             if (!string.IsNullOrEmpty(name_box.Text) && !string.IsNullOrWhiteSpace(name_box.Text) &&
-                (datepick.Value)!=null && (datepick.Value) != null &&
+                datepick.Value != null &&
                 !string.IsNullOrEmpty(polis_box.Text) && !string.IsNullOrWhiteSpace(polis_box.Text))
-            {
 
-                MySqlCommand command = new MySqlCommand("INSERT INTO Client (name, birth, polis) VALUES (@name, @birth, @polis)", connection);
+                Database.add_client(name_box.Text, datepick.Value, polis_box.Text);
 
-                command.Parameters.AddWithValue("name", name_box.Text);
-
-                command.Parameters.AddWithValue("birth", datepick.Value);
-
-                command.Parameters.AddWithValue("polis", polis_box.Text);
-
-                command.ExecuteNonQuery();
-                this.CloseConnection();
-
-            }
             else
             {
                 label5.Visible = true;
@@ -143,20 +132,9 @@ namespace kursach2
 
             if (!string.IsNullOrEmpty(id_box.Text) && !string.IsNullOrWhiteSpace(id_box.Text) &&
                 !string.IsNullOrEmpty(name_box.Text) && !string.IsNullOrWhiteSpace(name_box.Text) &&
-                datepick.Value != null && datepick.Value != null &&
+                datepick.Value != null &&
                 !string.IsNullOrEmpty(polis_box.Text) && !string.IsNullOrWhiteSpace(polis_box.Text))
-            {
-                MySqlCommand command = new MySqlCommand("UPDATE Client SET name=@name, birth=@birth, polis=@polis WHERE id_client=@id_client", connection);
-
-                command.Parameters.AddWithValue("id_client", id_box.Text);
-                command.Parameters.AddWithValue("name", name_box.Text);
-                command.Parameters.AddWithValue("birth", datepick.Value);
-                command.Parameters.AddWithValue("polis", polis_box.Text);
-
-                command.ExecuteNonQuery();
-                this.CloseConnection();
-
-            }
+                Database.change_client(id_box.Text, name_box.Text, datepick.Value, polis_box.Text);
             else if (!string.IsNullOrEmpty(id_box.Text) && !string.IsNullOrWhiteSpace(id_box.Text))
             {
                 label5.Visible = true;
@@ -175,15 +153,7 @@ namespace kursach2
                 label5.Visible = false;
 
             if (!string.IsNullOrEmpty(id_box.Text) && !string.IsNullOrWhiteSpace(id_box.Text))
-            {
-                MySqlCommand command = new MySqlCommand("DELETE FROM Client WHERE id_client=@id_client", connection);
-
-                command.Parameters.AddWithValue("id_client", id_box.Text);
-
-                command.ExecuteNonQuery();
-                this.CloseConnection();
-
-            }
+                Database.delete_client(id_box.Text);
             else
             {
                 label5.Visible = true;
