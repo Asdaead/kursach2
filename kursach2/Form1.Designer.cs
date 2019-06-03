@@ -47,9 +47,14 @@ namespace kursach2
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.datepick = new System.Windows.Forms.DateTimePicker();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.cyvarevDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cyvarevDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cyvarevDataSetBindingSource
@@ -65,7 +70,7 @@ namespace kursach2
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(544, 73);
+            this.label1.Location = new System.Drawing.Point(472, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 1;
@@ -74,7 +79,7 @@ namespace kursach2
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(544, 99);
+            this.label2.Location = new System.Drawing.Point(472, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 2;
@@ -83,7 +88,7 @@ namespace kursach2
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(544, 122);
+            this.label3.Location = new System.Drawing.Point(472, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 3;
@@ -91,21 +96,21 @@ namespace kursach2
             // 
             // id_box
             // 
-            this.id_box.Location = new System.Drawing.Point(659, 66);
+            this.id_box.Location = new System.Drawing.Point(587, 42);
             this.id_box.Name = "id_box";
             this.id_box.Size = new System.Drawing.Size(129, 20);
             this.id_box.TabIndex = 4;
             // 
             // name_box
             // 
-            this.name_box.Location = new System.Drawing.Point(659, 92);
+            this.name_box.Location = new System.Drawing.Point(587, 68);
             this.name_box.Name = "name_box";
             this.name_box.Size = new System.Drawing.Size(129, 20);
             this.name_box.TabIndex = 5;
             // 
             // polis_box
             // 
-            this.polis_box.Location = new System.Drawing.Point(659, 148);
+            this.polis_box.Location = new System.Drawing.Point(587, 124);
             this.polis_box.Name = "polis_box";
             this.polis_box.Size = new System.Drawing.Size(129, 20);
             this.polis_box.TabIndex = 7;
@@ -113,7 +118,7 @@ namespace kursach2
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(544, 151);
+            this.label4.Location = new System.Drawing.Point(472, 127);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 8;
@@ -121,7 +126,7 @@ namespace kursach2
             // 
             // change_client
             // 
-            this.change_client.Location = new System.Drawing.Point(632, 288);
+            this.change_client.Location = new System.Drawing.Point(560, 264);
             this.change_client.Name = "change_client";
             this.change_client.Size = new System.Drawing.Size(75, 23);
             this.change_client.TabIndex = 9;
@@ -131,7 +136,7 @@ namespace kursach2
             // 
             // add_client
             // 
-            this.add_client.Location = new System.Drawing.Point(551, 288);
+            this.add_client.Location = new System.Drawing.Point(479, 264);
             this.add_client.Name = "add_client";
             this.add_client.Size = new System.Drawing.Size(75, 23);
             this.add_client.TabIndex = 10;
@@ -141,7 +146,7 @@ namespace kursach2
             // 
             // delete_client
             // 
-            this.delete_client.Location = new System.Drawing.Point(713, 288);
+            this.delete_client.Location = new System.Drawing.Point(641, 264);
             this.delete_client.Name = "delete_client";
             this.delete_client.Size = new System.Drawing.Size(75, 23);
             this.delete_client.TabIndex = 11;
@@ -154,10 +159,10 @@ namespace kursach2
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(2, -1);
+            this.dataGridView1.Location = new System.Drawing.Point(-4, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(435, 449);
+            this.dataGridView1.Size = new System.Drawing.Size(422, 428);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
             // 
@@ -165,7 +170,7 @@ namespace kursach2
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(467, 356);
+            this.label5.Location = new System.Drawing.Point(435, 337);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 13);
             this.label5.TabIndex = 13;
@@ -174,36 +179,69 @@ namespace kursach2
             // 
             // datepick
             // 
-            this.datepick.Location = new System.Drawing.Point(659, 122);
+            this.datepick.Location = new System.Drawing.Point(587, 98);
             this.datepick.Name = "datepick";
             this.datepick.Size = new System.Drawing.Size(129, 20);
             this.datepick.TabIndex = 14;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(0, -1);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(808, 454);
+            this.tabControl1.TabIndex = 15;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.datepick);
+            this.tabPage1.Controls.Add(this.add_client);
+            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.delete_client);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.change_client);
+            this.tabPage1.Controls.Add(this.id_box);
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.name_box);
+            this.tabPage1.Controls.Add(this.polis_box);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(800, 428);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(800, 428);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 448);
-            this.Controls.Add(this.datepick);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.delete_client);
-            this.Controls.Add(this.add_client);
-            this.Controls.Add(this.change_client);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.polis_box);
-            this.Controls.Add(this.name_box);
-            this.Controls.Add(this.id_box);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.cyvarevDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cyvarevDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -228,6 +266,9 @@ namespace kursach2
         private System.Windows.Forms.DataGridView dataGridView1;
         private Label label5;
         private DateTimePicker datepick;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
     }
 }
 
