@@ -69,8 +69,10 @@ namespace kursach2
             // 
             this.passtb.Location = new System.Drawing.Point(199, 120);
             this.passtb.Name = "passtb";
+            this.passtb.PasswordChar = '*';
             this.passtb.Size = new System.Drawing.Size(103, 20);
             this.passtb.TabIndex = 4;
+            this.passtb.UseSystemPasswordChar = true;
             // 
             // logintb
             // 
