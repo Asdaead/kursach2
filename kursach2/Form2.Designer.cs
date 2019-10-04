@@ -28,93 +28,133 @@ namespace kursach2
         /// </summary>
         private void InitializeComponent()
         {
-            this.logintl = new System.Windows.Forms.Label();
-            this.passtl = new System.Windows.Forms.Label();
-            this.enterbt = new System.Windows.Forms.Button();
-            this.passtb = new System.Windows.Forms.TextBox();
-            this.logintb = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.logintb = new MetroFramework.Controls.MetroTextBox();
+            this.passtb = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
-            // logintl
+            // metroLabel1
             // 
-            this.logintl.AutoSize = true;
-            this.logintl.Location = new System.Drawing.Point(116, 72);
-            this.logintl.Name = "logintl";
-            this.logintl.Size = new System.Drawing.Size(38, 13);
-            this.logintl.TabIndex = 0;
-            this.logintl.Text = "Логин";
+            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel1.Location = new System.Drawing.Point(132, 29);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(130, 30);
+            this.metroLabel1.TabIndex = 8;
+            this.metroLabel1.Text = "Authorization";
             // 
-            // passtl
+            // metroButton1
             // 
-            this.passtl.AutoSize = true;
-            this.passtl.Location = new System.Drawing.Point(116, 120);
-            this.passtl.Name = "passtl";
-            this.passtl.Size = new System.Drawing.Size(45, 13);
-            this.passtl.TabIndex = 1;
-            this.passtl.Text = "Пароль";
+            this.metroButton1.Location = new System.Drawing.Point(106, 186);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(75, 23);
+            this.metroButton1.TabIndex = 9;
+            this.metroButton1.Text = "Enter";
+            this.metroButton1.UseSelectable = true;
             // 
-            // enterbt
+            // metroButton2
             // 
-            this.enterbt.Location = new System.Drawing.Point(119, 180);
-            this.enterbt.Name = "enterbt";
-            this.enterbt.Size = new System.Drawing.Size(62, 31);
-            this.enterbt.TabIndex = 2;
-            this.enterbt.Text = "Вход";
-            this.enterbt.UseVisualStyleBackColor = true;
-            this.enterbt.Click += new System.EventHandler(this.Enterbt_Click);
-            // 
-            // passtb
-            // 
-            this.passtb.Location = new System.Drawing.Point(199, 120);
-            this.passtb.Name = "passtb";
-            this.passtb.PasswordChar = '*';
-            this.passtb.Size = new System.Drawing.Size(103, 20);
-            this.passtb.TabIndex = 4;
-            this.passtb.UseSystemPasswordChar = true;
+            this.metroButton2.Location = new System.Drawing.Point(220, 186);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(75, 23);
+            this.metroButton2.TabIndex = 10;
+            this.metroButton2.Text = "Exit";
+            this.metroButton2.UseSelectable = true;
             // 
             // logintb
             // 
-            this.logintb.Location = new System.Drawing.Point(199, 69);
+            // 
+            // 
+            // 
+            this.logintb.CustomButton.Image = null;
+            this.logintb.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.logintb.CustomButton.Name = "";
+            this.logintb.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.logintb.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.logintb.CustomButton.TabIndex = 1;
+            this.logintb.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.logintb.CustomButton.UseSelectable = true;
+            this.logintb.CustomButton.Visible = false;
+            this.logintb.Lines = new string[0];
+            this.logintb.Location = new System.Drawing.Point(200, 79);
+            this.logintb.MaxLength = 32767;
             this.logintb.Name = "logintb";
-            this.logintb.Size = new System.Drawing.Size(103, 20);
-            this.logintb.TabIndex = 5;
+            this.logintb.PasswordChar = '\0';
+            this.logintb.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.logintb.SelectedText = "";
+            this.logintb.SelectionLength = 0;
+            this.logintb.SelectionStart = 0;
+            this.logintb.ShortcutsEnabled = true;
+            this.logintb.Size = new System.Drawing.Size(162, 23);
+            this.logintb.TabIndex = 11;
+            this.logintb.UseSelectable = true;
+            this.logintb.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.logintb.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // label3
+            // passtb
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(113, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(189, 31);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Авторизация";
             // 
-            // button1
             // 
-            this.button1.Location = new System.Drawing.Point(238, 180);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(64, 31);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Выход";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            this.passtb.CustomButton.Image = null;
+            this.passtb.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.passtb.CustomButton.Name = "";
+            this.passtb.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.passtb.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.passtb.CustomButton.TabIndex = 1;
+            this.passtb.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.passtb.CustomButton.UseSelectable = true;
+            this.passtb.CustomButton.Visible = false;
+            this.passtb.Lines = new string[0];
+            this.passtb.Location = new System.Drawing.Point(200, 119);
+            this.passtb.MaxLength = 32767;
+            this.passtb.Name = "passtb";
+            this.passtb.PasswordChar = '*';
+            this.passtb.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.passtb.SelectedText = "";
+            this.passtb.SelectionLength = 0;
+            this.passtb.SelectionStart = 0;
+            this.passtb.ShortcutsEnabled = true;
+            this.passtb.Size = new System.Drawing.Size(162, 23);
+            this.passtb.TabIndex = 12;
+            this.passtb.UseSelectable = true;
+            this.passtb.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.passtb.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(85, 79);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(41, 19);
+            this.metroLabel2.TabIndex = 13;
+            this.metroLabel2.Text = "Login";
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(85, 122);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(63, 19);
+            this.metroLabel3.TabIndex = 14;
+            this.metroLabel3.Text = "Password";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(385, 242);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.logintb);
+            this.Controls.Add(this.metroLabel3);
+            this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.passtb);
-            this.Controls.Add(this.enterbt);
-            this.Controls.Add(this.passtl);
-            this.Controls.Add(this.logintl);
+            this.Controls.Add(this.logintb);
+            this.Controls.Add(this.metroButton2);
+            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.metroLabel1);
             this.Name = "Form2";
-            this.Text = "Form2";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,12 +162,12 @@ namespace kursach2
 
         #endregion
 
-        private System.Windows.Forms.Label logintl;
-        private System.Windows.Forms.Label passtl;
-        private System.Windows.Forms.Button enterbt;
-        private System.Windows.Forms.TextBox passtb;
-        private System.Windows.Forms.TextBox logintb;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton metroButton2;
+        private MetroFramework.Controls.MetroTextBox logintb;
+        private MetroFramework.Controls.MetroTextBox passtb;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
     }
 }

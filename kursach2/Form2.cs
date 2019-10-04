@@ -8,10 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 
 namespace kursach2
 {
-    public partial class Form2 : Form
+    public partial class Form2 : MetroForm
     {
         public Form2()
         {
@@ -24,10 +25,10 @@ namespace kursach2
             string mail = logintb.Text;
             string password = passtb.Text;
             MySqlConnection myconn;
-            myconn = new MySqlConnection("server=silan.zyns.com" + "; database=cyvarev; UID=cyvarev" + "; PWD=cyvarev" + ";");
+            myconn = new MySqlConnection("server=127.0.0.1; database=usbw; UID=root ; Password=Gagarin156 ;port=3307;");
             myconn.Open();
 
-            string sql = "select password from user where mail = '" + mail + "'";
+            string sql = "SELECT password FROM user WHERE email = '" + mail + "'";
 
             MySqlDataAdapter adapter = new MySqlDataAdapter(sql, myconn);
             DataTable dt = new DataTable();
